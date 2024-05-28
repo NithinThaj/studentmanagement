@@ -1,0 +1,106 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <button class="btn btn-outline-success" type="submit" [routerLink]="['']">Back to Home</button>
+
+  <!-- First Name -->
+  <div>
+    <label for="firstName">First Name*</label>
+    <input id="firstName" formControlName="first_name">
+    <div *ngIf="editForm.get('first_name')?.invalid && editForm.get('first_name')?.touched">
+      First Name is required
+    </div>
+  </div>
+
+  <!-- Last Name -->
+  <div>
+    <label for="lastName">Last Name*</label>
+    <input id="lastName" formControlName="last_name">
+    <div *ngIf="editForm.get('last_name')?.invalid && editForm.get('last_name')?.touched">
+      Last Name is required
+    </div>
+  </div>
+
+  <!-- Date of Birth -->
+  <div class="form-group">
+    <label for="dateOfBirth">Date of Birth:*</label>
+    <input id="dateOfBirth" formControlName="date_of_birth" type="date" class="form-control">
+    <div *ngIf="editForm.get('date_of_birth')?.touched && editForm.get('date_of_birth')?.invalid">
+      Date of Birth is required.
+    </div>
+    <div *ngIf="editForm.get('date_of_birth')?.touched && !isValidDateFormat(editForm.get('date_of_birth')?.value)">
+      Invalid date format. Please use yyyy-mm-dd format.
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email">Email*</label>
+    <input id="email" formControlName="email" class="form-control" >
+    <div *ngIf="editForm.get('email')?.invalid && editForm.get('email')?.touched" class="text-danger">
+      <div *ngIf="editForm.get('email')?.hasError('required')">Email is required</div>
+      <div *ngIf="editForm.get('email')?.hasError('email')">Email is invalid</div>
+      <div *ngIf="editForm.get('email')?.hasError('pattern')">Email must end with .com</div>
+      <div *ngIf="editForm.get('email')?.hasError('emailTaken')">Email exist</div>
+
+      <!-- <div *ngIf="emailTaken">Email already exists</div> -->
+    </div>
+  </div>
+  <!-- Address Group -->
+  <div formGroupName="address">
+    <label for="street">Street*</label>
+    <textarea id="street" formControlName="street"></textarea>
+    <div *ngIf="editForm.get('address.street')?.invalid && editForm.get('address.street')?.touched">
+      Street address is required
+    </div>
+    <div class="form-group">
+      <label>State:*</label>
+      <select formControlName="state">
+        <option value="" disabled selected>Select State</option>
+        <option value="kerala">Kerala</option>
+        <option value="tamilnadu">Tamil Nadu</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="andhra">Andhra Pradesh</option>
+        <option value="delhi">Delhi</option>
+      </select>
+      <div *ngIf="editForm.get('address.state')?.touched && editForm.get('address.state')?.invalid">
+        State is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>City:*</label>
+      <select formControlName="city">
+        <option value="" disabled selected>Select City</option>
+        <option value="kochi">Kochi</option>
+        <option value="tvm">Thiruvananthapuram</option>
+        <option value="kollam">Kollam</option>
+        <option value="alappuzha">Alappuzha</option>
+      </select>
+      <div *ngIf="editForm.get('address.city')?.touched && editForm.get('address.city')?.invalid">
+        City is required.
+      </div>
+    </div>
+    <label for="pincode">Pincode*</label>
+    <input id="pincode" formControlName="pincode" type="number">
+    <div *ngIf="editForm.get('address.pincode')?.invalid && editForm.get('address.pincode')?.touched">
+      Pincode must be 6 digits
+    </div>
+
+  </div>
+
+  <!-- Subjects -->
+  <div class="form-group">
+    <label>Subjects*</label>
+    <div class="checkbox-group" style="display: flex; flex-wrap: wrap;">
+      <label class="checkbox-label" *ngFor="let subject of ['Math', 'Science', 'English']">
+        <input type="checkbox" (change)="onSubjectChange($event)" [value]="subject"
+          [checked]="isSubjectSelected(subject)">
+        {{ subject }}
+      </label>
+    </div>
+    <div *ngIf="editForm.get('subjects')?.invalid && editForm.get('subjects')?.touched" class="text-danger">
+      At least one subject is required
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,38 @@
+<div class="container">
+    <button class="btn btn-success btn-lg btn-animated" type="submit" [routerLink]="['create']" style="border: #FFA500;background-color:rgb(72, 158, 238)">Create</button>
+</div>
+
+<div class="search-container">
+    <input type="text" name="text" class="search-input" placeholder="Search student" [(ngModel)]="searchQuery" (input)="filterStudents()" />
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stud of filteredStudents; let i = index">
+            <th>{{ i + 1 }}</th>
+            <td>{{ stud.first_name }} {{ stud.last_name }}</td>
+             <td>{{stud.email}}</td> 
+            <td>
+              <button [routerLink]="['/detail', stud.id]"  style="background-color: green;">View</button>
+              <button [routerLink]="['/change', stud.id]" style="background-color:  #FFA500;">Edit</button>
+              <button (click)="deleteStudent(stud.id)"style="background-color: red;">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

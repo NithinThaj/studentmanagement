@@ -1,0 +1,68 @@
+.student-detail {
+  background-color: #f9f9f9; /* White color for background */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 10px;
+  padding: 20px;
+  width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.student-detail h2 {
+  text-align: center;
+  color: #333; /* Dark grey for text */
+  margin-bottom: 20px;
+}
+
+.student-detail .btn {
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #007bff; /* Blue color for button */
+  color: white; /* White text for button */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.student-detail .btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.info-section {
+  margin-bottom: 20px;
+}
+
+.info-section h3 {
+  border-bottom: 2px solid #ddd; /* Light grey border */
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: #555; /* Medium grey for headers */
+}
+
+.info-section p {
+  margin: 5px 0;
+  color: #666; /* Light grey for text */
+}
+
+.info-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-section ul li {
+  background: #e9e9e9; /* Very light grey for list items */
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #444; /* Dark grey for text in list items */
+}
+
+.info-section strong {
+  color: #333; /* Dark grey for strong text */
+}

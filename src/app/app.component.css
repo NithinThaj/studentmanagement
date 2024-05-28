@@ -1,0 +1,73 @@
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center; /* Align horizontally in the center */
+    align-items: flex-start; /* Align vertically at the top */
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  /* Button Styling */
+  .btn {
+    display: inline-block;
+    font-weight: 500;
+    color:navy;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color:transparent;
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Outline Button with Success Color */
+  .btn-outline-success {
+    background-color: lightblue;
+    color: #28a745;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #171817;
+    color: white;
+  }
+  
+  /* Rounded Corners */
+  .btn-rounded {
+    border-radius: 20px; /* Adjust as needed */
+  }
+  
+  /* Button with Shadow */
+  .btn-shadow {
+    box-shadow: 0 4px 6px rgba(20, 185, 75, 0.1);
+  }
+  
+  /* Button with Larger Font */
+  .btn-large {
+    font-size: 1.25rem;
+  }
+  
+  /* Button with Small Font */
+  .btn-small {
+    font-size: 0.875rem;
+  }
+  
+  /* Center Button Text */
+  .btn-center {
+    text-align: center;
+  }
+  

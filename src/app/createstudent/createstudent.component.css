@@ -1,0 +1,140 @@
+/* General Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Form Groups */
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  /* Labels */
+  form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Inputs, Textareas, and Selects */
+  form input,
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  /* Error Messages */
+  form div div {
+    color: rgb(12, 12, 12);
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
+  
+  /* Buttons */
+  form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  form button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  form button[type="button"]:hover {
+    background-color: #5a6268;
+  }
+  
+  form button[type="button"].remove {
+    background-color: #dc3545;
+    margin-top: 10px;
+  }
+  
+  form button[type="button"].remove:hover {
+    background-color: #c82333;
+  }
+  
+  /* Subjects Checkbox */
+  form div label {
+    margin-top: 10px;
+  }
+  
+  form div div input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Address Group */
+  form div[formGroupName="address"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+  form div[formGroupName="address"] label {
+    margin-top: 15px;
+  }
+  
+  /* Previous Educational Details */
+  form div[formArrayName="previousEducation"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+  form div[formArrayName="previousEducation"] > div {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  form div[formArrayName="previousEducation"] > div:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  form div[formArrayName="previousEducation"] label {
+    margin-top: 15px;
+  }
+  
+
+  .subjects-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .subject-item {
+    margin-right: 20px; /* Adjust spacing between subjects */
+  }
+  
+  .subject-item label {
+    margin-left: 5px; /* Adjust spacing between checkbox and label */
+  }
+
+  small{
+    color: red;
+  }
+  
